@@ -1,0 +1,104 @@
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Animação</title>
+    <style rel="stylesheet" type="text/css" >
+
+          body{
+
+              background: url("paisagem2.png") no-repeat center;
+              background-size: contain;
+
+
+          }
+          img{
+              animation: fly 2s;
+              display: grid;
+              place-items: center;
+              height: rem(50);
+              position: absolute;
+              top: 40px;
+              height: 190;
+              width: 250x;
+
+              animation-name: fly;
+              animation-duration: 1s;
+              animation-delay: 1s;
+              animation-iteration-count: infinite;
+              animation-direction: alternate;
+              animation-timing-function: ease-in-out;
+              anim
+          }
+
+          img:hover{
+              /*animation-play-state: paused;*/
+              background-color: yellow;
+              border-radius: 200px;
+          }
+          
+         /* .box{
+             background-color: yellow;
+             height: 300px;
+             width: 300px;
+
+             transition-property: background-color, border-radius;
+             transition-duration: 4s, 2s;
+          }
+
+          .box:hover{
+              background-color: blue;
+              border-radius: 50%;
+          } */
+
+          @keyframes fly{
+              0%{
+                  transform: translateX(0);
+              }
+
+              100%{
+                  transform: translateX(calc(100vw - 200px));
+              }
+          }
+
+          .valorContador{
+              font-size: 300px;
+              width: 500px;
+              border:none;
+              bottom: 0;
+              position: absolute;
+              right: 300px;
+              background-color: transparent;
+              color: red;
+          }
+
+          h2{
+              text-align: center;
+          }
+        
+    }
+
+    </style>
+    <script type="text/javascript">
+       var numero = 0;
+       function animar(){
+        var formulario = window.document.getElementById("box");           
+           numero=numero+1;
+           formulario.vlrQtde.value = numero;
+           //alert("Clique número "+numero);
+           
+       }
+    </script>
+
+
+</head>
+<body>
+     <h2>Clique na imagem para ganhar pontos</h2>
+     <form id="box">
+        <img src="goku.png" onclick="animar()" alt="Mario" />
+        <input class="ValorContador" type="text" name="vlrQtde" disabled="disabled"/>
+    </form>
+
+</body>
+</html>
+
+
